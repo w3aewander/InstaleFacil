@@ -59,6 +59,12 @@ case "$RELEASE" in
         echo "É UBUNTU 20.04 FOCAL"
 	sleep 2
     ;;
+
+    hirsute)
+	echo "É UBUNTU 21.04 HIRSUTE"
+	sleep 2
+	;;
+
     *)
         echo "RELEASE INVALIDA"
 	sleep 2
