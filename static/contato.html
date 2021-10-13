@@ -1,0 +1,45 @@
+
+{{block "header" .}}
+
+{{end}}
+
+{{block "content" .}}
+
+<div class="p-t-content mb-4">
+
+    <div class="p-title">{{.Title}}</div>
+    <p>
+
+    <form class="form" action="/sendmail" method="POST">
+
+        <div class="form-group m-2">
+            <label class="form-label" for="nome">Nome</label>
+            <input type="text" class="form-control" name="nome" id="nome">
+        </div>
+
+        <div class="form-group m-2">
+            <label for="email">E-mail</label>
+            <input type="text" class="form-control" name="email" id="email">
+        </div>
+        <div class="form-group m-2">
+            <label for="assunto">Assunto</label>
+            <input type="text" class="form-control" name="assunto" id="assunto">
+        </div>
+
+        <div class="form-group m-2">
+            <label for="mensagem">Mensagem</label>
+            <textarea  class="form-control" name="mensagem" id="mensagem"></textarea>
+        </div>
+
+       <div class="btn-group pt-2 m-2">
+           <button type="button" class="btn btn-primary">Enviar</button>
+           <button type="reset" class="btn btn-secondary">Cancelar</button>
+       </div>
+
+    </form>
+
+    </p>
+
+</div>
+
+{{end}}

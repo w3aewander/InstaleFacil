@@ -1,0 +1,56 @@
+
+{{block "header" .}}
+   
+{{end}}
+
+
+{{block "content" .}}
+
+<div class="p-t-content">
+    
+
+        <p class="p-title">{{.Title}}</p>
+
+        <ol>
+            <li>Instale o <strong>pacote SSH</strong> no servidor onde o e-Cidade será instalado. caso ainda não tenha feito.</li> 
+            <li>Acesse seu servidor via ssh: <em><span class="text-danger">ssh usuario@ip </span></em></li>
+            <li>Habilite o login via ssh para o usuário <strong>root</strong> no servidor , provisoriamente.
+                <br>Geralmente o login de root no Ubuntu é desabilitado, isto é, não há uma senha configurada. Caso não tenha definido uma senha para usuário root durante a instalação do Ubuntu, acesse o servidor com o seu usuário administrativo e defina uma senha para o usuário root com o comando <em><span class="text-danger">sudo passwd root</span></em>
+            </li>
+            <li>Edite o arquivo <strong>/etc/ssh/sshd_config</strong> e altera a linha <strong>PermitRootLogin = yes</strong></li>
+            <li>Em seu computador (Ubuntu) crie as chaves publica e privada com o comando <em><span class="text-danger">ssh-keygen -t rsa -b 4096</span></em> para configurar sua máquina como um host confiável e permitir acesso ao servidor sem senha.</li>
+            <li>Execute o comando <em><span class="text-danger">ssh-copy-id  root@ip</span></em>. Por exemplo, root@192.168.0.1, onde o usuário é o ecidade e o ip do servidor é 192.168.0.1, substitua pelas suas configurações.</li>
+            <li>Em sua máquina de trabalho envie para o servidor via comando scp os arquivos install_ecidde.sh  e eii-console, o instalador vai utilizá-lo durante o processo de instalação.</li>
+            <li>Após os procedimentos acima forem executados inicie o servidor do <strong>Instale Fácil</strong> com o comando  <cmd><span class="text-danger"> sudo ./instaleFacil </span></cmd></li>
+            <li>A aplicação abrirá em um navegador. Agora, apenas click no botão Instalar</li>
+            <li>O processo de instalação demora cerca de 45 minutos.</li>
+            <li>Aguarde a conclusão da instalação.</li>
+            <li>O e-Cidade já estará disponível após a conclusão do <strong>InstaleFacil</strong>.</li>
+        </ol>
+
+        <p>
+            Durante a instalação do e-Cidade, o instalador fácil fará o download dos seguintes pacotes:
+        </p>
+
+        <p>Se quiser instalar diretamente a partir de seu servidor basta executar o arquivo eii-console, descrito na linha 7 do conjunto de instruções acima, que fará todo trabalho da mesma forma, evitando que sejam realizados todos os procedimentos descritos acima, bastando apenas acesso como usuário root em um terminal ssh e executar <strong>sudo ./eii-console</strong></p>
+        <ul>
+            <li>Apache 2</li>
+            <li>PHP 5.6</li>
+            <li><sup class="text-red">*</sup>PostgreSQL - v9.5/v10</li>
+        </ul>
+        <p class="text-wrap">O instalador também fará o ajuste do idioma para português Brasil.<br>Em seguida vai configurar o conjunto de caracteres fará a configuração da codificação do sistema para ISO-8859-1.</p>
+        <p>Automaticamente fará a configuração dos pacotes Apache, PHP e PostgreSQL</p>
+        <p>Definirá o banco de dados da instalação padrão</p>
+        <p>Fará população do banco de dados com schema padrão </p>
+        <p>Fará o download do e-cidade</p>
+        <p>Descompactará o sistema no diretório padrão (/var/www/html)</p>
+
+    </p>
+
+    
+</div>
+
+{{end}}
+
+
+

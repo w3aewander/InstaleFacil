@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{{block "header" .}}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{.PageTitle}}</title>
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+{{end}}
+<body>
+
+<body>
+
+<header class="d-flex flex-row flex-1 align-items-center fixed-top bg-green p-3">
+    <img src="/static/img/logo.e-cidade-300x226@2x.png" class="img-fluid" width="230">
+    <div class="d-flex flex-column px-4 flex-grow-1">
+        <span style="font-size: 2rem">E-Cidade Community</span>
+        <strong style="font-size: 1.9rem">Instale Fácil</strong><span class="text-black">{{.AppVersion}}</span>
+    </div>
+</header>
+
+<ul class="nav justify-content-center bg-dark-green fixed-190">
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/instalar">Instalação</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="/sobre">Sobre</a>
+    </li>
+    <li class="nav-item">
+        <!-- <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a> -->
+        <a class="nav-link" href="/contato" tabindex="-1" >Contato</a>
+    </li>
+</ul>
+
+<main class="container">
+    <aside>
+
+    </aside>
+    <article>
+        <div class="d-flex justify-content-center align-items-center" >
+            <img   src="/static/img/processando.gif" class="img-responsive mt-4 pt-4" id="progresso" style="display: none" >
+        </div>
+        {{block "content" .}}
+        {{end}}
+    </article>
+
+</main>
+
+<footer>
+    @e-cidade community 2021
+</footer>
+
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="/static/js/app.js"></script>
+
+</body>
+
+</html>

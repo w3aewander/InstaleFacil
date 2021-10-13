@@ -1,0 +1,6 @@
+--2021-10-11 16:36:02--  https://www.youtube.com/redirect?event=comments
+Resolvendo www.youtube.com (www.youtube.com)... 2800:3f0:4004:80a::200e, 2800:3f0:4004:802::200e, 2800:3f0:4004:811::200e, ...
+Conectando-se a www.youtube.com (www.youtube.com)|2800:3f0:4004:80a::200e|:443... conectado.
+A requisição HTTP foi enviada, aguardando resposta... 404 Not Found
+2021-10-11 16:36:02 ERRO 404: Not Found.
+
